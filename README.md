@@ -53,18 +53,18 @@ pip install opencv-python mediapipe
 python HandTrackingNew.py  # Recommended implementation
 # or
 python main.py             # Basic implementation
-
+```
 
 ## configuration
 
 You can modify the following parameters inside HandTrackingModule.py to control tracking behavior:
-
+```
 def __init__(self, 
              mode=False,          # Static image mode
              maxHands=2,          # Max hands to detect
              detectionCon=0.5,    # Detection confidence threshold
              trackCon=0.5):       # Tracking confidence threshold
-
+```
 
 ## output features
 
