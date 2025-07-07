@@ -1,92 +1,74 @@
-# DetectionModules
+# Real-Time Hand Tracking with MediaPipe & OpenCV
 
-A real-time hand tracking solution using MediaPipe and OpenCV that detects and visualizes hand landmarks from a webcam feed.
+A real-time hand tracking solution using **MediaPipe** and **OpenCV** that detects and visualizes hand landmarks from a webcam feed.
+
+---
 
 ## 📁 File Structure
+
 HandTrackingProject/
 ├── HandTrackingModule.py # Custom hand detection module
 ├── HandTrackingNew.py # Simplified implementation using the module
 └── main.py # Basic hand tracking implementation
 
-text
 
-## 🔍 DetectionModules
+---
+
+## Detection Modules
 
 ### HandTrackingModule.py
-```python
-class handDetector:
-    """
-    Core hand detection class with these features:
-    - Configurable hand tracking parameters
-    - Landmark position extraction
-    - Visualization utilities
-    """
-Key Methods:
-findHands(): Detects hands and draws landmarks
 
-findPosition(): Returns landmark coordinates in pixel space
+A reusable class-based module for hand tracking and landmark detection.
 
-🚀 Implementations
-HandTrackingNew.py
-Uses the custom handDetector class
+#### Key Methods
 
-Tracks thumb tip position (Landmark #4)
+- `findHands()`: Detects hands and draws landmarks  
+- `findPosition()`: Returns landmark coordinates in pixel space
 
-Displays real-time FPS
+---
 
-main.py
-Direct MediaPipe implementation
+## Implementations
 
-Shows all 21 landmarks per hand
+### HandTrackingNew.py
 
-Prints complete landmark data
+- Uses the custom `handDetector` class  
+- Tracks **thumb tip position** (Landmark #4)  
+- Displays **real-time FPS**
 
-🛠️ Setup & Usage
-Install dependencies:
+### main.py
 
-bash
+- Direct implementation using MediaPipe  
+- Shows **all 21 landmarks per hand**  
+- Prints **complete landmark data** in the console
+
+---
+
+## Setup & Usage
+
+### Install Dependencies
+
+```bash
 pip install opencv-python mediapipe
-Run the system:
 
-bash
 python HandTrackingNew.py  # Recommended implementation
 # or
-python main.py            # Basic implementation
-⚙️ Configuration
-Adjust in HandTrackingModule.py:
+python main.py             # Basic implementation
 
-python
+
+## configuration
+
+You can modify the following parameters inside HandTrackingModule.py to control tracking behavior:
+
 def __init__(self, 
              mode=False,          # Static image mode
              maxHands=2,          # Max hands to detect
              detectionCon=0.5,    # Detection confidence threshold
              trackCon=0.5):       # Tracking confidence threshold
-📊 Output Features
-Real-time hand visualization
 
-FPS counter display
 
-Console output of landmark positions
+## output features
 
-Support for multiple hand tracking
-
-💡 Potential Applications
-Gesture-controlled interfaces
-
-Sign language recognition
-
-VR/AR interaction systems
-
-Educational tools for anatomy studies
-
-Note: For optimal performance, ensure good lighting conditions and clear hand visibility.
-
-text
-
-This version includes:
-- Proper GitHub Markdown formatting
-- Clear section headers with emoji visual cues
-- Code block formatting for Python snippets
-- Better visual hierarchy with consistent indentation
-- Highlighted important notes
-- More scannable structure with bullet points
+- Real-time hand landmark visualization
+- FPS counter on the video stream
+- Console output of landmark positions
+- Supports multiple hands tracking
